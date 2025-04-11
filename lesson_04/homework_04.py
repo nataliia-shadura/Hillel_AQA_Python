@@ -30,17 +30,22 @@ print(f"Original text: ",adwentures_of_tom_sawer)
 adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("\n", " ")
 print(f"Task 1: ",adwentures_of_tom_sawer)
 
+
 # task 02 ==
 """ Замініть .... на пробіл
 """
+
 adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("....", " ")
 print(f"Task 2: ",adwentures_of_tom_sawer)
 
 # task 03 ==
 """ Зробіть так, щоб у тексті було не більше одного пробілу між словами.
 """
-adwentures_of_tom_sawer = re.sub(r'\s+', ' ', adwentures_of_tom_sawer)
-print(f"Task 3: ",adwentures_of_tom_sawer)
+words = adwentures_of_tom_sawer.split()
+adwentures_of_tom_sawer = " ".join(words)
+print(f"Task 3: ", adwentures_of_tom_sawer)
+#adwentures_of_tom_sawer = re.sub(r'\s+', ' ', adwentures_of_tom_sawer)
+#print(f"Task 3: ",adwentures_of_tom_sawer)
 
 # task 04
 """ Виведіть, скількі разів у тексті зустрічається літера "h"
@@ -51,12 +56,12 @@ print(f"Task 4. Літера 'h' зустрічається {h_letter_count} р�
 # task 05
 """ Виведіть, скільки слів у тексті починається з Великої літери?
 """
-number_upper_case = 0
+number_title = 0
 for letter in adwentures_of_tom_sawer:
-    if letter.isupper():
-        number_upper_case += 1
+    if letter.istitle():
+        number_title += 1
 
-print(f"Task 5. Кількість слів, що починаються з великої літери: {number_upper_case} ")
+print(f"Task 5. Кількість слів, що починаються з великої літери: {number_title} ")
 
 # task 06
 """ Виведіть позицію, на якій слово Tom зустрічається вдруге
@@ -69,7 +74,7 @@ print(f"Task 6. Позиція, на якій слово Tom зустрічає�
 """ Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
-adwentures_of_tom_sawer_sentences = re.split(r'[.!?]\s+', adwentures_of_tom_sawer)
+adwentures_of_tom_sawer_sentences = re.split(r'[.]\s+', adwentures_of_tom_sawer)
 print(f"Task 7.{adwentures_of_tom_sawer_sentences}")
 
 
@@ -98,3 +103,7 @@ words_in_last_sentence = last_sentence.split()
 word_count = len(words_in_last_sentence)
 
 print(f"Кількість слів в останньому реченні: {word_count}")
+
+print(f"----------------Текст, поділений на фізичні лінії: -------------")
+for sentence in adwentures_of_tom_sawer_sentences:
+    print(sentence + ".")
