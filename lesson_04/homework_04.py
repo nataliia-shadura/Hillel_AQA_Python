@@ -1,26 +1,25 @@
-import re
-adwentures_of_tom_sawer = """\
-Tom gave up the brush with reluctance in his .... face but alacrity
-in his heart. And while
-the late steamer
-"Big Missouri" worked ....
-and sweated
-in the sun,
-the retired artist sat on a barrel in the .... shade close by, dangled his legs,
-munched his apple, and planned the slaughter of more innocents.
-There was no lack of material;
-boys happened along every little while;
-they came to jeer, but .... remained to whitewash. ....
-By the time Ben was fagged out, Tom had traded the next chance to Billy Fisher for
-a kite, in good repair;
-and when he played
-out, Johnny Miller bought
-in for a dead rat and a string to swing it with—and so on, and so on,
-hour after hour. And when the middle of the afternoon came, from being a
-poor poverty, stricken boy in the .... morning, Tom was literally
-rolling in wealth."""
-print(f"Original text: ",adwentures_of_tom_sawer)
 
+adwentures_of_tom_sawer = (
+    "Tom gave up the brush with reluctance in his .... face but alacrity\n"
+    "in his heart. And while\n"
+    "the late steamer\n"
+    "\"Big Missouri\" worked ....\n"
+    "and sweated\n"
+    "in the sun,\n"
+    "the retired artist sat on a barrel in the .... shade close by, dangled his legs,\n"
+    "munched his apple, and planned the slaughter of more innocents.\n"
+    "There was no lack of material;\n"
+    "boys happened along every little while;\n"
+    "they came to jeer, but .... remained to whitewash. ....\n"
+    "By the time Ben was fagged out, Tom had traded the next chance to Billy Fisher for\n"
+    "a kite, in good repair;\n"
+    "and when he played\n"
+    "out, Johnny Miller bought\n"
+    "in for a dead rat and a string to swing it with—and so on, and so on,\n"
+    "hour after hour. And when the middle of the afternoon came, from being a\n"
+    "poor poverty, stricken boy in the .... morning, Tom was literally\n"
+    "rolling in wealth."
+)
 
 ##  ПЕРЕЗАПИСУЙТЕ зміст змінної adwentures_of_tom_sawer у завданнях 1-3
 # task 01 ==
@@ -74,7 +73,8 @@ print(f"Task 6. Позиція, на якій слово Tom зустрічає�
 """ Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
-adwentures_of_tom_sawer_sentences = re.split(r'[.]\s+', adwentures_of_tom_sawer)
+#adwentures_of_tom_sawer_sentences = re.split(r'[.]\s+', adwentures_of_tom_sawer)
+adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split(". ")
 print(f"Task 7.{adwentures_of_tom_sawer_sentences}")
 
 
@@ -92,8 +92,7 @@ for sentense in adwentures_of_tom_sawer_sentences:
     if sentense.startswith("By the time"):
         print("Так, є речення, що починається з 'By the time':")
         print(sentense)
-        break
-
+ #       break    # в умові написано "якесь речення", тобто , першого знайденого буде достатньо
 
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
